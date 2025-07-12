@@ -1,0 +1,136 @@
+{
+  "ipos": [
+    {
+      "id": 1,
+      "company": {
+        "name": "Nova Agritech Ltd.",
+        "logo": "/logos/nova.png",
+        "sector": "Agriculture Technology"
+      },
+      "priceBand": "Rs 39 - 41",
+      "openDate": "2024-01-22",
+      "closeDate": "2024-01-24",
+      "issueSize": "143.81 Cr.",
+      "issueType": "Book Built",
+      "lotSize": 50,
+      "status": "upcoming",
+      "exchange": "NSE",
+      "listingDate": "2024-01-30",
+      "minimumInvestment": "₹2,050",
+      "documents": {
+        "rhp": "/documents/nova_rhp.pdf",
+        "drhp": "/documents/nova_drhp.pdf"
+      }
+    },
+    {
+      "id": 2,
+      "company": {
+        "name": "EPACK Durable Ltd.",
+        "logo": "/logos/epack.png",
+        "sector": "Packaging"
+      },
+      "priceBand": "Rs 218 - 230",
+      "openDate": "2024-01-19",
+      "closeDate": "2024-01-23",
+      "issueSize": "640.05 Cr.",
+      "issueType": "Book Built",
+      "lotSize": 65,
+      "status": "ongoing",
+      "exchange": "NSE",
+      "listingDate": "2024-01-29",
+      "minimumInvestment": "₹14,950",
+      "documents": {
+        "rhp": "/documents/epack_rhp.pdf",
+        "drhp": "/documents/epack_drhp.pdf"
+      }
+    },
+    {
+      "id": 3,
+      "company": {
+        "name": "RK Swamy Ltd.",
+        "logo": "/logos/rkswamy.png",
+        "sector": "Advertising & Marketing"
+      },
+      "priceBand": null,
+      "openDate": null,
+      "closeDate": null,
+      "issueSize": null,
+      "issueType": "Book Built",
+      "lotSize": null,
+      "status": "upcoming",
+      "exchange": "NSE",
+      "listingDate": null,
+      "minimumInvestment": null,
+      "documents": {
+        "rhp": "/documents/rkswamy_rhp.pdf",
+        "drhp": "/documents/rkswamy_drhp.pdf"
+      }
+    },
+    {
+      "id": 4,
+      "company": {
+        "name": "Oravel Stays Ltd.",
+        "logo": "/logos/oyo.png",
+        "sector": "Hospitality"
+      },
+      "priceBand": null,
+      "openDate": null,
+      "closeDate": null,
+      "issueSize": "8430 Cr.",
+      "issueType": "Book Built",
+      "lotSize": null,
+      "status": "upcoming",
+      "exchange": "NSE",
+      "listingDate": null,
+      "minimumInvestment": null,
+      "documents": {
+        "rhp": "/documents/oyo_rhp.pdf",
+        "drhp": "/documents/oyo_drhp.pdf"
+      }
+    },
+    {
+      "id": 5,
+      "company": {
+        "name": "Imagine marketing Ltd.",
+        "logo": "/logos/boat.png",
+        "sector": "Consumer Electronics"
+      },
+      "priceBand": null,
+      "openDate": null,
+      "closeDate": null,
+      "issueSize": "2000 cr.",
+      "issueType": "Book Built",
+      "lotSize": null,
+      "status": "upcoming",
+      "exchange": "NSE",
+      "listingDate": null,
+      "minimumInvestment": null,
+      "documents": {
+        "rhp": "/documents/boat_rhp.pdf",
+        "drhp": "/documents/boat_drhp.pdf"
+      }
+    },
+    {
+      "id": 6,
+      "company": {
+        "name": "Kids Clinic India Ltd.",
+        "logo": "/logos/cloudnine.png",
+        "sector": "Healthcare"
+      },
+      "priceBand": null,
+      "openDate": null,
+      "closeDate": null,
+      "issueSize": null,
+      "issueType": "Book Built",
+      "lotSize": null,
+      "status": "upcoming",
+      "exchange": "NSE",
+      "listingDate": null,
+      "minimumInvestment": null,
+      "documents": {
+        "rhp": "/documents/cloudnine_rhp.pdf",
+        "drhp": "/documents/cloudnine_drhp.pdf"
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom utilities for smooth scrolling and mobile optimization */
+@layer utilities {
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobile-first responsive text sizes */
+  .responsive-text-lg {
+    @apply text-base sm:text-lg;
+  }
+  
+  .responsive-text-xl {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .responsive-text-2xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  /* Custom mobile padding */
+  .mobile-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Mobile-optimized scrollbar */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+  }
+}
