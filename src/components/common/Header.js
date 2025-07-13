@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -11,32 +12,30 @@ const Header = () => {
       }}
     >
       <div className="flex justify-between items-center h-full px-12">
-        {/* Logo Section - Exact Figma positioning */}
+        {/* Logo Section - Exact Figma positioning with dp.png */}
         <div className="flex items-center" style={{ marginLeft: '31px' }}>
-          {/* Logo Rectangle */}
-          <div 
-            className="mr-6"
-            style={{
-              width: '132px',
-              height: '118px',
-              background: 'url(/logos/dp.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-          
-          {/* BLUESTOCK Text */}
-          <h1 
-            className="text-black font-bold"
-            style={{
-              fontSize: '45px',
-              lineHeight: '68px',
-              fontFamily: 'Poppins',
-              color: '#1E1E1E'
-            }}
-          >
-            BLUESTOCK
-          </h1>
+          {/* Bluestock Logo + Text - Make it clickable to home */}
+          <Link to="/" className="flex items-center space-x-4">
+            {/* Bluestock Logo PNG */}
+            <img 
+              src="/logos/dp.png"
+              alt="Bluestock Logo"
+              className="w-12 h-12 object-contain"
+            />
+            
+            {/* BLUESTOCK Text */}
+            <h1 
+              className="text-black font-bold hover:text-blue-600 cursor-pointer transition-colors"
+              style={{
+                fontSize: '45px',
+                lineHeight: '68px',
+                fontFamily: 'Poppins',
+                color: '#1E1E1E'
+              }}
+            >
+              BLUESTOCK
+            </h1>
+          </Link>
         </div>
 
         {/* Navigation - Exact Figma positioning */}
@@ -131,8 +130,10 @@ const Header = () => {
 
         {/* Auth Section - Exact Figma positioning */}
         <div className="flex items-center space-x-6" style={{ marginRight: '98px' }}>
-          <button 
-            className="font-semibold hover:text-blue-600"
+          {/* Sign In Button - Connected to /signin */}
+          <Link 
+            to="/signin"
+            className="font-semibold hover:text-blue-600 transition-colors"
             style={{
               fontSize: '15px',
               lineHeight: '22px',
@@ -141,21 +142,26 @@ const Header = () => {
             }}
           >
             Sign In
-          </button>
+          </Link>
           
-          <button 
-            className="font-semibold text-white px-6 py-3 rounded"
+          {/* Sign Up Button - Connected to /signup */}
+          <Link 
+            to="/signup"
+            className="font-semibold text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors"
             style={{
               fontSize: '15px',
               lineHeight: '22px',
               fontFamily: 'Poppins',
               background: '#3F52FF',
               width: '135px',
-              height: '42px'
+              height: '42px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
             Sign Up Now
-          </button>
+          </Link>
           
           {/* Menu Icon */}
           <button className="p-2">

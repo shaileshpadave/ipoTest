@@ -3,7 +3,15 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q
 from .models import IPO, Company
-from .serializers import IPOListSerializer, IPODetailSerializer, IPOCreateUpdateSerializer
+from .serializers import IPOListSerializer, IPODetailSerializer, IPOCreateUpdateSerializer, CompanySerializer
+
+
+class CompanyViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    ViewSet for Company model - read-only operations
+    """
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
 
 
 class IPOViewSet(viewsets.ModelViewSet):
@@ -54,6 +62,14 @@ class IPOViewSet(viewsets.ModelViewSet):
             return IPOCreateUpdateSerializer
         else:
             return IPODetailSerializer
+    
+    def perform_create(self, serializer):
+        """Override create to handle any additional logic"""
+        serializer.save()
+    
+    def perform_update(self, serializer):
+        """Override update to handle any additional logic"""
+        serializer.save()
     
     @action(detail=False, methods=['get'])
     def by_status(self, request):
