@@ -11,6 +11,7 @@ const HomePage = () => {
   const {
     ipos,
     loading,
+    error,
     searchTerm,
     setSearchTerm,
     statusFilter,
@@ -19,7 +20,8 @@ const HomePage = () => {
     setSectorFilter,
     clearFilters,
     statusCounts,
-    totalResults
+    totalResults,
+    refreshData
   } = useIPOData();
 
   const [selectedIPO, setSelectedIPO] = useState(null);
@@ -77,6 +79,27 @@ const HomePage = () => {
       <div style={{ paddingLeft: '63px', paddingRight: '63px' }}>
         {loading ? (
           <LoadingSpinner size="lg" text="Loading IPO data..." />
+        ) : error ? (
+          /* Error State */
+          <div className="text-center py-12">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
+              <h3 className="text-lg font-medium text-red-800 mb-2">Connection Error</h3>
+              <p className="text-red-600 mb-4">
+                Unable to connect to the backend server. Please make sure:
+              </p>
+              <ul className="text-left text-red-600 text-sm mb-4 space-y-1">
+                <li>• Django server is running on http://localhost:8000</li>
+                <li>• Database is connected and populated</li>
+                <li>• No firewall blocking the connection</li>
+              </ul>
+              <button 
+                onClick={refreshData}
+                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
         ) : (
           <>
             {/* Search and Filters */}
@@ -90,6 +113,24 @@ const HomePage = () => {
                 onSectorFilterChange={setSectorFilter}
               />
             </div>
+
+            {/* Status counts display */}
+            {statusCounts.total > 0 && (
+              <div className="mb-6 flex gap-4 text-sm">
+                <span className="text-gray-600">
+                  Total: <span className="font-semibold text-black">{statusCounts.total}</span>
+                </span>
+                <span className="text-gray-600">
+                  Upcoming: <span className="font-semibold text-blue-600">{statusCounts.upcoming || 0}</span>
+                </span>
+                <span className="text-gray-600">
+                  Ongoing: <span className="font-semibold text-green-600">{statusCounts.ongoing || 0}</span>
+                </span>
+                <span className="text-gray-600">
+                  Listed: <span className="font-semibold text-purple-600">{statusCounts.listed || 0}</span>
+                </span>
+              </div>
+            )}
 
             {/* IPO Grid - Exact 3-column layout */}
             <IPOGrid
