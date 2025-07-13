@@ -3,6 +3,7 @@ import Header from '../components/common/Header';
 import SearchFilter from '../components/ipo/SearchFilter';
 import IPOGrid from '../components/ipo/IPOGrid';
 import IPODetailModal from '../components/ipo/IPODetailModal';
+import FAQSection from '../components/ipo/FAQSection';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import useIPOData from '../hooks/useIPOData';
 
@@ -30,7 +31,6 @@ const HomePage = () => {
   };
 
   const handleApply = (ipo) => {
-    // In real app, this would redirect to application form
     alert(`Apply functionality for ${ipo.company.name} will be implemented!`);
   };
 
@@ -40,38 +40,41 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ background: '#F6F5F5' }}>
       <Header />
       
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center text-sm text-gray-600">
-            <span className="text-blue-600 font-medium">Bluestock</span>
-            <span className="mx-2">{'>'}</span>
-            <span className="text-blue-600 font-medium">IPO</span>
-            <span className="mx-2">{'>'}</span>
-            <span className="font-medium">UPCOMING IPO</span>
-          </div>
+      {/* Breadcrumb - Exact Figma positioning */}
+      <div className="pt-6 pb-4" style={{ paddingLeft: '60px' }}>
+        <div className="flex items-center text-xs">
+          <span className="text-blue-600 font-normal">Bluestock</span>
+          <span className="mx-1 text-black">{'>'}</span>
+          <span className="text-blue-600 font-normal">IPO</span>
+          <span className="mx-1 text-black">{'>'}</span>
+          <span className="text-black font-normal">UPCOMING IPO</span>
         </div>
       </div>
 
-      {/* Page Header */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Upcoming IPO
-            </h1>
-            <p className="text-gray-600">
-              Companies that have filled for an IPO with SEBI. Few details might be disclosed by the companies later.
-            </p>
-          </div>
-        </div>
+      {/* Page Header - Exact Figma styling */}
+      <div style={{ paddingLeft: '60px', paddingBottom: '32px' }}>
+        <h1 className="text-black font-semibold mb-3" style={{ 
+          fontSize: '32px', 
+          lineHeight: '48px',
+          fontFamily: 'Poppins'
+        }}>
+          Upcoming IPO
+        </h1>
+        <p className="text-black font-light" style={{ 
+          fontSize: '14px', 
+          lineHeight: '21px',
+          maxWidth: '709px',
+          fontFamily: 'Poppins'
+        }}>
+          Companies that have filled for an IPO with SEBI. Few details might be disclosed by the companies later.
+        </p>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div style={{ paddingLeft: '63px', paddingRight: '63px' }}>
         {loading ? (
           <LoadingSpinner size="lg" text="Loading IPO data..." />
         ) : (
@@ -88,35 +91,46 @@ const HomePage = () => {
               />
             </div>
 
-            {/* IPO Grid */}
+            {/* IPO Grid - Exact 3-column layout */}
             <IPOGrid
               ipos={ipos}
               onViewDetails={handleViewDetails}
               onApply={handleApply}
             />
 
-            {/* Empty State for No Results */}
+            {/* Empty State */}
             {ipos.length === 0 && (searchTerm || statusFilter || sectorFilter) && (
               <div className="text-center py-12">
-                <div className="max-w-md mx-auto">
-                  <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                    <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">No IPOs match your criteria</h3>
-                  <p className="text-gray-500 mb-4">
-                    Try adjusting your search term or removing some filters to see more results.
-                  </p>
-                  <button 
-                    onClick={clearFilters}
-                    className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50"
-                  >
-                    Clear All Filters
-                  </button>
-                </div>
+                <h3 className="text-lg font-medium text-black mb-2">No IPOs match your criteria</h3>
+                <p className="text-gray-500 mb-4">
+                  Try adjusting your search term or removing some filters to see more results.
+                </p>
+                <button 
+                  onClick={clearFilters}
+                  className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50"
+                >
+                  Clear All Filters
+                </button>
               </div>
             )}
+
+            {/* FAQ Section */}
+            <FAQSection />
+
+            {/* Footer */}
+            <div className="bg-white mt-16 py-16 text-center" style={{ 
+              width: '1713px', 
+              height: '193px',
+              marginLeft: '41px'
+            }}>
+              <p className="text-black font-medium" style={{ 
+                fontSize: '83px', 
+                lineHeight: '25px',
+                fontFamily: 'Poppins'
+              }}>
+                Add / Extend Footer
+              </p>
+            </div>
           </>
         )}
       </div>

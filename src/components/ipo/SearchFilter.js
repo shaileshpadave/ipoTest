@@ -23,7 +23,8 @@ const SearchFilter = ({
     { value: 'Advertising & Marketing', label: 'Advertising & Marketing' },
     { value: 'Hospitality', label: 'Hospitality' },
     { value: 'Consumer Electronics', label: 'Consumer Electronics' },
-    { value: 'Healthcare', label: 'Healthcare' }
+    { value: 'Healthcare', label: 'Healthcare' },
+    { value: 'Metro', label: 'Travel' },
   ];
 
   return (

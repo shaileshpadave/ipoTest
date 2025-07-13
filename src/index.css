@@ -1,36 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom base styles */
+/* Custom base styles matching Figma */
 @layer base {
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F5F5;
   }
 }
 
-/* Custom utilities for smooth scrolling and mobile optimization */
+/* Design system colors matching Figma */
+:root {
+  --primary-blue: #414BEA;
+  --secondary-blue: #3F52FF;
+  --orange: #F05537;
+  --background: #F6F5F5;
+  --card-background: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #5A5858;
+  --text-tertiary: #9A9A9A;
+  --border-color: #E5E5E5;
+}
+
+/* Custom utilities for Figma design */
 @layer utilities {
-  .smooth-scroll {
-    scroll-behavior: smooth;
+  .text-primary-blue {
+    color: var(--primary-blue);
   }
   
-  /* Mobile-first responsive text sizes */
-  .responsive-text-lg {
-    @apply text-base sm:text-lg;
+  .text-secondary-blue {
+    color: var(--secondary-blue);
   }
   
-  .responsive-text-xl {
-    @apply text-lg sm:text-xl;
+  .text-orange {
+    color: var(--orange);
   }
   
-  .responsive-text-2xl {
-    @apply text-xl sm:text-2xl;
+  .bg-primary-blue {
+    background-color: var(--primary-blue);
   }
   
-  /* Custom mobile padding */
-  .mobile-px {
-    @apply px-4 sm:px-6 lg:px-8;
+  .bg-secondary-blue {
+    background-color: var(--secondary-blue);
+  }
+  
+  .bg-orange {
+    background-color: var(--orange);
+  }
+  
+  .bg-card {
+    background-color: var(--card-background);
+  }
+  
+  .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-tertiary {
+    color: var(--text-tertiary);
+  }
+  
+  /* Figma-specific backdrop blur effect */
+  .backdrop-blur-figma {
+    backdrop-filter: blur(9.25px);
+  }
+  
+  /* Figma box shadow */
+  .shadow-figma {
+    filter: drop-shadow(0px 8px 6.5px rgba(202, 202, 202, 0.25));
   }
 }
 
